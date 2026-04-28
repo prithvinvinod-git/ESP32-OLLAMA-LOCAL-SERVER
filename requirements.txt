@@ -1,0 +1,43 @@
+# ESP32 AI Assistant — Library Requirements
+# ==========================================
+# Install these via Arduino IDE → Tools → Manage Libraries
+# (unless marked as "Built-in" — those come with the ESP32 Arduino core)
+#
+# Format:  LibraryName == version  (or "latest" if any recent version works)
+
+# ── Display ───────────────────────────────────────────────────────────────────
+Adafruit SSD1306 == latest          # OLED 128x64 driver (I2C)
+Adafruit GFX Library == latest      # Graphics primitives (dependency of SSD1306)
+
+# ── JSON ──────────────────────────────────────────────────────────────────────
+ArduinoJson == latest               # Ollama API request/response parsing (v6 or v7)
+
+# ── Audio ─────────────────────────────────────────────────────────────────────
+ESP8266Audio == latest              # I2S MP3 playback on ESP32 (AudioGeneratorMP3,
+                                    # AudioOutputI2S, AudioFileSourceHTTPStream,
+                                    # AudioFileSourceBuffer, AudioFileSourcePROGMEM)
+
+# ── Built-in (ESP32 Arduino Core — no manual install needed) ──────────────────
+# WiFi                              # WiFi station mode
+# WiFiClient                        # TCP client
+# WiFiClientSecure                  # TLS/HTTPS client (StreamElements TTS)
+# HTTPClient                        # HTTP POST/GET to Ollama & TTS API
+# WebServer                         # Embedded HTTP server (port 80)
+# Wire                              # I2C bus (OLED)
+# driver/i2s.h                      # Low-level I2S DMA driver (raw tone generation)
+# math.h                            # sinf() for tone synthesis
+
+# ── Board Support ─────────────────────────────────────────────────────────────
+# Board:  esp32 by Espressif Systems (install via Boards Manager)
+# URL:    https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+# Tested board: ESP32 Dev Module (ESP32-WROOM-32)
+# Recommended Arduino IDE version: 2.x
+
+# ── External Services (no install — internet access required) ─────────────────
+# Ollama        https://ollama.ai          Local LLM server (run on PC, same LAN)
+#   Model:      gemma:2b  (or any model supported by Ollama)
+#   Command:    ollama pull gemma:2b && OLLAMA_HOST=0.0.0.0 ollama serve
+#
+# StreamElements TTS  https://streamelements.com
+#   Free public TTS API — no API key required
+#   Endpoint:   https://api.streamelements.com/kappa/v2/speech?voice=Brian&text=...
