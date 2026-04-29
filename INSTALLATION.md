@@ -2,9 +2,7 @@
 
 This guide walks you through everything needed to flash and run the ESP32 AI Assistant from scratch.
 
----
 
-## Prerequisites
 
 ### Hardware Required
 
@@ -20,7 +18,7 @@ This guide walks you through everything needed to flash and run the ESP32 AI Ass
 
 ## Step 1 — Install Arduino IDE
 
-1. Download **Arduino IDE 2.x** from [https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)
+1. Download **Arduino IDE 2.x** 
 2. Install and launch it.
 
 ---
@@ -33,7 +31,7 @@ This guide walks you through everything needed to flash and run the ESP32 AI Ass
    https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
    ```
 3. Open **Tools → Board → Boards Manager**
-4. Search for `esp32` (by Espressif Systems) and click **Install** (version 2.x recommended)
+4. Search for `esp32` (by Espressif Systems) and click **Install** (version 2.x.x recommended)
 
 ---
 
